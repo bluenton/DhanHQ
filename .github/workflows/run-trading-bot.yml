@@ -1,10 +1,10 @@
 name: Run DhanHQ Trading Bot
 
 on:
-  push:  # Runs the bot when new code is pushed
+  push:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   trade-bot:
@@ -23,8 +23,11 @@ jobs:
         run: |
           pip install requests pandas numpy ta schedule python-dotenv
 
+      - name: Debug: List Repository Files
+        run: ls -R  # Lists all files to check if `orders.py` exists
+
       - name: Run trading bot
         env:
           DHAN_API_KEY: ${{ secrets.DHAN_API_KEY }}
           DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
-        run: python orders.py  # Change if your main script has a different name
+        run: python orders.py  # Update this if file is inside a folder

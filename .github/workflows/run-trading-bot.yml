@@ -1,0 +1,28 @@
+name: Run DhanHQ Trading Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  trade-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests pandas numpy ta schedule
+
+      - name: Run trading bot
+        env:
+          DHAN_API_KEY: ${{ secrets.DHAN_API_KEY }}
+          DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
+        run: python orders.py  # Change to the correct script file name

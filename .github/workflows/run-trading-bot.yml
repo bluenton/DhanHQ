@@ -24,7 +24,7 @@ jobs:
           pip install requests pandas numpy ta schedule python-dotenv
 
       - name: Debug: List Repository Files
-        run: ls -R  # Lists all files to check if orders.py exists
+        run: ls -R  # ✅ Lists all files to verify orders.py exists
 
       - name: Run trading bot
         env:

@@ -1,9 +1,18 @@
 from dhanhq import dhanhq
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+import os
+from dhanhq import dhanhq
 
-dhan = dhanhq(1104512857, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzM4MzExMzU4LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwNDUxMjg1NyJ9.kGg4tZDEBWaDfW6bMlfCV-JZKk_Fy3Xu5-g31p-T19_nWc1Cj4EzzqbtsZZdrQcSSq85juxHwXzQotBjC1hfkQ")
+# Load API credentials from GitHub Secrets
+API_KEY = os.getenv("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzM4MzExMzU4LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwNDUxMjg1NyJ9.kGg4tZDEBWaDfW6bMlfCV-JZKk_Fy3Xu5-g31p-T19_nWc1Cj4EzzqbtsZZdrQcSSq85juxHwXzQotBjC1hfkQ")
+CLIENT_ID = os.getenv("1104512857")
+
+# Initialize Dhan API client
+dhan = dhanhq(client_id=CLIENT_ID, access_token=API_KEY)
+
+
+logging.basicConfig(level=logging.DEBUG)
 
 # Replace  your_client_id with Dhan Client ID.
 # Replace "your_access_token" with your access token. Do remember it needs to be inside "".

@@ -3,7 +3,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-dhan = dhanhq(your_client_id, "your_access_token")
+dhan = dhanhq(1104512857, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzM4MzExMzU4LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwNDUxMjg1NyJ9.kGg4tZDEBWaDfW6bMlfCV-JZKk_Fy3Xu5-g31p-T19_nWc1Cj4EzzqbtsZZdrQcSSq85juxHwXzQotBjC1hfkQ")
 
 # Replace  your_client_id with Dhan Client ID.
 # Replace "your_access_token" with your access token. Do remember it needs to be inside "".

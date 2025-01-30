@@ -30,4 +30,4 @@ jobs:
         env:
           DHAN_API_KEY: ${{ secrets.DHAN_API_KEY }}
           DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
-        run: python main/examples/orders.py  # UPDATED FILE PATH
+        run: python examples/orders.py  # ✅ UPDATED FILE PATH
